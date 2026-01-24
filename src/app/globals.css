@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  /* fonts */
+  --font-sohne: var(--font-sohne-breit);
+  --font-neue-haas: var(--font-neue-haas-grotesk);
+
+  /* color */
+  --color-foggy: #89898c;
+  --color-light-soil: #a99277;
+  --color-dark-soil: #1e1e1e;
+  --color-popping: #6bd425;
+  --color-warm-light: #f6ebde;
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-[90%];
+  }
+
+  .container-narrow {
+    @apply mx-auto w-full max-w-[85%];
+  }
+}

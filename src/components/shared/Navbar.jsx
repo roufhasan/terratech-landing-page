@@ -27,23 +27,24 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <nav className="bg-warm-light/20 backdrop-blur flex items-center justify-between container-narrow p-3 rounded-full">
-      <div className="flex items-center gap-2">
+    <nav className="bg-warm-light/20 container-narrow flex items-center justify-between rounded-full p-3 backdrop-blur">
+      {/* logo */}
+      <Link href="/" className="flex items-center gap-2">
         <Image src="/images/logo/logo.svg" alt="logo" width={55} height={55} />
 
-        <Link href="/" className="uppercase text-sm font-medium">
+        <span className="text-sm font-medium tracking-widest uppercase">
           Terratech
-        </Link>
-      </div>
+        </span>
+      </Link>
 
       <div className="flex items-center gap-9">
         {navLinks.map((link) => (
           <Link
             key={link.title}
             href={link.url}
-            className={`uppercase font-medium ${
+            className={`font-medium uppercase ${
               link?.highlight
-                ? "bg-popping text-dark-soil py-4 px-6 rounded-full"
+                ? "bg-popping text-dark-soil rounded-full px-6 py-4"
                 : ""
             }`}
           >

@@ -1,12 +1,6 @@
+import { socialLinks } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
-
-const socialLinks = [
-  { icon: "facebook", label: "Facebook", url: "https://www.facebook.com" },
-  { icon: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com" },
-  { icon: "instagram", label: "Instagram", url: "https://www.instagram.com" },
-  { icon: "x", label: "X", url: "https://www.x.com" },
-];
 
 export default function HeroSocialLinks() {
   return (

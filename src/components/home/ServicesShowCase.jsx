@@ -69,13 +69,24 @@ export default function ServicesShowCase() {
       </div>
 
       {/* services container */}
-      <div className="container-narrow">
+      <div className="container-narrow relative">
         <h1 className="text-[80px] leading-none">
           <span className="block">Navigating</span>
           <span>the world with</span>{" "}
           <span className="text-light-soil font-medium">unmatched</span>
           <span className="block text-right">accuracy.</span>
         </h1>
+
+        <div className="absolute top-[15%] left-[20%] z-10">
+          <div className="relative size-57 rotate-35">
+            <Image
+              src="/images/icons/stone-6.svg"
+              alt="stone"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
 
         {/* services card */}
         <div className="mt-20">

@@ -2,9 +2,11 @@ import { socialLinks } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function HeroSocialLinks() {
+// "absolute top-1/2 right-8 flex -translate-y-1/2 flex-col gap-9"
+
+export default function HeroSocialLinks({ isHidden }) {
   return (
-    <div className="absolute top-1/2 right-8 flex -translate-y-1/2 flex-col gap-9">
+    <div className={`${isHidden ? "hidden" : "flex justify-center gap-9"}`}>
       <div className="relative h-9">
         <Image
           src="/images/icons/line.svg"

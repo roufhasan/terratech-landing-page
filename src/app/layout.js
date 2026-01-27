@@ -125,11 +125,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${sohneBreit.variable} ${neueHaas.variable}`}>
       <body className="font-sohne bg-dark-soil text-warm-light relative antialiased">
-        <header className="relative top-6 z-50">
-          <Navbar />
-        </header>
+        <Navbar />
 
-        <main>{children}</main>
+        <main className="px-5 lg:px-0">{children}</main>
       </body>
     </html>
   );

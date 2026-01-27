@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative py-25">
       <div className="flex flex-col justify-center">
         {/* stone images */}
-        <div className="absolute top-[6%] left-[1%]">
+        <div className="absolute top-[6%] left-[1%] hidden lg:block">
           <div className="relative size-25.5">
             <Image
               src="/images/icons/stone-4.svg"
@@ -19,7 +19,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="absolute top-[4%] left-[30%]">
+        <div className="absolute top-[4%] left-[30%] hidden lg:block">
           <div className="relative size-33">
             <Image
               src="/images/icons/stone-3.svg"
@@ -31,7 +31,7 @@ export default function Hero() {
         </div>
 
         <div className="relative">
-          <HeroSocialLinks />
+          <HeroSocialLinks isHidden={true} />
 
           <HeroContent />
         </div>

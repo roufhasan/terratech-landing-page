@@ -4,12 +4,12 @@ import Link from "next/link";
 export default function HeroContent() {
   return (
     <div className="container-narrow bg-[url('/images/home/hero-bg.png')] bg-contain bg-right bg-no-repeat">
-      <h1 className="text-[130px] leading-none">
+      <h1 className="text-6xl leading-none lg:text-[130px]">
         <span className="block font-light">Where</span>
         <span className="text-popping block font-semibold">precision</span>
       </h1>
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col-reverse gap-4 lg:flex-row lg:items-center">
         <div className="space-y-6">
           <p className="font-neue-haas max-w-65 tracking-wider">
             Creating detailed topographic maps that accurately represent the
@@ -17,13 +17,13 @@ export default function HeroContent() {
           </p>
           <Link
             href="/services"
-            className="inline-block rounded-full border px-10 py-4 font-medium uppercase"
+            className="inline-block rounded-full border px-6 py-2.5 text-xs font-medium tracking-wider uppercase md:px-10 md:py-4 md:text-base"
           >
             Our services
           </Link>
         </div>
 
-        <h1 className="text-[130px] leading-none">
+        <h1 className="text-6xl leading-none lg:text-[130px]">
           <span className="block font-light">meets</span>
           <span className="block font-semibold">progress</span>
         </h1>

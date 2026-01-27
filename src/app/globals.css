@@ -32,12 +32,12 @@
 }
 
 @layer components {
-  .container {
-    @apply mx-auto w-full max-w-[90%];
+  .container-navbar {
+    @apply mx-auto w-full max-w-full lg:max-w-[90%];
   }
 
   .container-narrow {
-    @apply mx-auto w-full max-w-[85%];
+    @apply mx-auto w-full max-w-full lg:max-w-[85%];
   }
 
   .paragraph {

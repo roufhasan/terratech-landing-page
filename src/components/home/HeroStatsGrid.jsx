@@ -1,5 +1,6 @@
 import Image from "next/image";
 import StatCard from "../card/StatCard";
+import HeroSocialLinks from "./HeroSocialLinks";
 
 const stats = [
   {
@@ -26,14 +27,16 @@ const stats = [
 
 export default function HeroStatsGrid() {
   return (
-    <div className="container-narrow relative">
+    <div className="container-narrow relative mt-10">
+      <HeroSocialLinks />
+
       {/* divider line */}
-      <div className="bg-light-soil/50 mt-20 mb-6 h-px"></div>
+      <div className="bg-light-soil/50 mt-10 mb-6 h-px lg:mt-20"></div>
 
       {/* stats grid container */}
-      <div className="border-light-soil/50 grid grid-cols-4 border">
+      <div className="border-light-soil/50 grid grid-cols-2 border lg:grid-cols-4">
         {stats.map((stat, i) => (
-          <StatCard key={i} stat={stat} />
+          <StatCard key={i} stat={stat} i={i} totalStats={stats.length} />
         ))}
       </div>
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function HeroContent() {
   return (
     <div className="container-narrow bg-[url('/images/home/hero-bg.png')] bg-contain bg-right bg-no-repeat">
-      <h1 className="text-6xl leading-none lg:text-[130px]">
+      <h1 className="text-6xl leading-none md:text-7xl lg:text-[130px]">
         <span className="block font-light">Where</span>
         <span className="text-popping block font-semibold">precision</span>
       </h1>
@@ -17,13 +17,13 @@ export default function HeroContent() {
           </p>
           <Link
             href="/services"
-            className="inline-block rounded-full border px-6 py-2.5 text-xs font-medium tracking-wider uppercase md:px-10 md:py-4 md:text-base"
+            className="hover:border-popping hover:bg-popping/10 inline-block rounded-full border border-white/20 bg-transparent px-6 py-2.5 text-xs font-medium tracking-wider uppercase transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_12px_rgba(139,233,56,0.3)] md:px-8 md:py-3.75 md:text-base xl:px-10 xl:py-4"
           >
             Our services
           </Link>
         </div>
 
-        <h1 className="text-6xl leading-none lg:text-[130px]">
+        <h1 className="text-6xl leading-none md:text-7xl lg:text-[130px]">
           <span className="block font-light">meets</span>
           <span className="block font-semibold">progress</span>
         </h1>

@@ -28,7 +28,7 @@ const stats = [
 export default function HeroStatsGrid() {
   return (
     <div className="container-narrow relative mt-10">
-      <HeroSocialLinks />
+      <HeroSocialLinks className="block md:hidden" />
 
       {/* divider line */}
       <div className="bg-light-soil/50 mt-10 mb-6 h-px lg:mt-20"></div>

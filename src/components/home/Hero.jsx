@@ -31,7 +31,7 @@ export default function Hero() {
         </div>
 
         <div className="relative">
-          <HeroSocialLinks isHidden={true} />
+          <HeroSocialLinks className="hidden md:block" />
 
           <HeroContent />
         </div>

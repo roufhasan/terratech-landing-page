@@ -27,10 +27,10 @@ export default function Navbar() {
 
   return (
     <header className="relative top-6 z-50 px-5 lg:px-0">
-      <nav className="bg-warm-light/20 container-navbar flex items-center justify-between rounded-full p-2 backdrop-blur sm:p-2.5 lg:p-3">
+      <nav className="bg-warm-light/20 container-navbar flex items-center justify-between rounded-full p-2 backdrop-blur sm:p-2.5 xl:p-3">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative size-10 sm:size-12 lg:size-14">
+          <div className="relative size-10 sm:size-12 xl:size-14">
             <Image
               src="/images/logo/logo.svg"
               alt="Terratech logo"
@@ -44,15 +44,15 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden items-center gap-9 lg:flex">
+        <div className="hidden items-center gap-6 lg:flex xl:gap-9">
           {navLinks.map((nav) => (
             <Link
               key={nav.title}
               href={nav.url}
-              className={`font-medium uppercase ${
+              className={`font-medium uppercase transition-colors ease-linear ${
                 nav?.highlight
-                  ? "bg-popping text-dark-soil rounded-full px-6 py-4"
-                  : ""
+                  ? "bg-popping hover:bg-popping/90 text-dark-soil rounded-full px-5 py-3 xl:px-6 xl:py-4"
+                  : "hover:text-popping"
               }`}
             >
               {nav.title}

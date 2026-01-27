@@ -7,7 +7,9 @@ export default function StatCard({ stat, i, totalStats }) {
     >
       <div className="mx-auto max-w-63">
         <div className="flex items-baseline">
-          <h2 className="text-4xl leading-none lg:text-[100px]">{number}</h2>
+          <h2 className="text-4xl leading-none lg:text-[84px] xl:text-[100px]">
+            {number}
+          </h2>
           {hasPercentage && <span className="text-popping text-xl">%</span>}
         </div>
 

@@ -31,10 +31,10 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="bg-warm-light text-dark-soil relative py-37.5">
+    <section className="bg-warm-light text-dark-soil relative px-5 py-16 md:py-24 lg:px-0 lg:py-37.5">
       {/* stone images */}
-      <div className="absolute -top-[10%] right-[5%]">
-        <div className="relative size-51">
+      <div className="absolute -top-[5%] right-[5%] md:-top-[10%]">
+        <div className="relative size-28 md:size-51">
           <Image
             src="/images/icons/stone-2.svg"
             alt="stone-2"
@@ -44,7 +44,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="absolute top-[15%] right-[1%]">
+      <div className="absolute top-[15%] right-[1%] hidden lg:block">
         <div className="relative size-30">
           <Image
             src="/images/icons/stone-8.svg"
@@ -56,15 +56,15 @@ export default function Projects() {
       </div>
 
       {/* container */}
-      <div className="container-narrow flex items-end justify-between">
-        <h2 className="w-full max-w-250 text-[80px] leading-none">
+      <div className="container-narrow flex flex-col md:flex-row md:items-end md:justify-between">
+        <h2 className="w-full max-w-250 text-4xl leading-none md:text-5xl lg:text-[80px]">
           Do you need more proof of our{" "}
           <span className="text-light-soil font-medium">excellence</span>?
         </h2>
 
         <Link
           href="/"
-          className="bg-dark-soil text-popping mt-5 inline-block rounded-full px-6 py-4 text-sm font-medium tracking-wider uppercase"
+          className="bg-dark-soil text-popping mt-5 inline-block w-fit rounded-full px-6 py-4 text-sm font-medium tracking-wider uppercase"
         >
           Projects
         </Link>

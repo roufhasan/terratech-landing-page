@@ -33,9 +33,9 @@ const services = [
 
 export default function ServicesShowCase() {
   return (
-    <section className="bg-warm-light text-dark-soil relative py-25">
+    <section className="bg-warm-light text-dark-soil relative px-5 py-12 md:py-16 lg:px-0 lg:py-25">
       {/* stone images */}
-      <div className="absolute -top-[5%] right-0">
+      <div className="absolute -top-[5%] right-0 hidden lg:block">
         <div className="relative size-36">
           <Image
             src="/images/icons/stone-7.svg"
@@ -46,7 +46,7 @@ export default function ServicesShowCase() {
         </div>
       </div>
 
-      <div className="absolute top-[5%] right-[4%]">
+      <div className="absolute top-[5%] right-[4%] hidden lg:block">
         <div className="relative size-30">
           <Image
             src="/images/icons/stone-8.svg"
@@ -57,7 +57,7 @@ export default function ServicesShowCase() {
         </div>
       </div>
 
-      <div className="absolute top-[15%] right-[2%]">
+      <div className="absolute top-[15%] right-[2%] hidden lg:block">
         <div className="relative size-11">
           <Image
             src="/images/icons/stone-9.svg"
@@ -69,22 +69,24 @@ export default function ServicesShowCase() {
       </div>
 
       {/* services container */}
-      <div className="container-narrow relative">
-        <h1 className="text-[80px] leading-none">
-          <span className="block">Navigating</span>
-          <span>the world with</span>{" "}
-          <span className="text-light-soil font-medium">unmatched</span>
-          <span className="block text-right">accuracy.</span>
-        </h1>
+      <div className="container-narrow">
+        <div className="relative">
+          <h2 className="text-4xl leading-none md:text-5xl lg:text-[80px]">
+            <span className="block">Navigating</span>
+            <span>the world with</span>{" "}
+            <span className="text-light-soil font-medium">unmatched</span>
+            <span className="block text-right">accuracy.</span>
+          </h2>
 
-        <div className="absolute top-[15%] left-[20%] z-10">
-          <div className="relative size-57 rotate-35">
-            <Image
-              src="/images/icons/stone-6.svg"
-              alt="stone"
-              fill
-              className="object-cover"
-            />
+          <div className="absolute top-[70%] left-[5%] z-10 md:left-[20%]">
+            <div className="relative size-36 rotate-35 lg:size-57">
+              <Image
+                src="/images/icons/stone-6.svg"
+                alt="stone"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
 

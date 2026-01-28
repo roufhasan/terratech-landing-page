@@ -18,7 +18,7 @@ export default function Marquee({
           {items.map((project, i) => (
             <div
               key={i}
-              className="relative flex h-34 w-69 shrink-0 items-center justify-center rounded-[10px] bg-[#D4C1AB]/10"
+              className="relative flex h-30 w-64 shrink-0 items-center justify-center rounded-[10px] bg-[#D4C1AB]/10 md:h-34 md:w-69"
             >
               <Image
                 src={project.src}

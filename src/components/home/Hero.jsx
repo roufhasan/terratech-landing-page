@@ -5,7 +5,7 @@ import HeroStatsGrid from "./HeroStatsGrid";
 
 export default function Hero() {
   return (
-    <section className="relative py-25">
+    <section className="relative px-5 py-25 lg:px-0">
       <div className="flex flex-col justify-center">
         {/* stone images */}
         <div className="absolute top-[6%] left-[1%] hidden lg:block">

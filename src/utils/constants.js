@@ -8,23 +8,23 @@ export const socialLinks = [
 export const navLinks = [
   {
     title: "services",
-    url: "/services",
+    url: "#services",
   },
   {
     title: "industries",
-    url: "/inustries",
+    url: "#industries",
   },
   {
     title: "projects",
-    url: "/projects",
+    url: "#projects",
   },
   {
     title: "about us",
-    url: "/about",
+    url: "#contact",
   },
   {
     title: "contact us",
-    url: "/contact",
+    url: "#contact",
     highlight: true,
   },
 ];

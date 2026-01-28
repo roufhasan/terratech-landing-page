@@ -5,9 +5,13 @@ import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import { navLinks } from "@/utils/constants";
+import { AnimatePresence } from "motion/react";
+import * as motion from "motion/react-client";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     if (isOpen) {
@@ -16,6 +20,23 @@ export default function Navbar() {
       document.body.style.overflow = "";
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY || currentScrollY < 100) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
@@ -26,8 +47,13 @@ export default function Navbar() {
   };
 
   return (
-    <header className="relative top-6 z-50 px-5 lg:px-0">
-      <nav className="bg-warm-light/20 container-navbar flex items-center justify-between rounded-full p-2 backdrop-blur sm:p-2.5 xl:p-3">
+    <motion.header
+      className="fixed top-6 right-0 left-0 z-50 px-5 lg:px-0"
+      initial={{ y: 0 }}
+      animate={{ y: isVisible ? 0 : -200 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
+      <nav className="bg-dark-soil/90 text-warm-light container-navbar mx-auto flex items-center justify-between rounded-full p-2 backdrop-blur sm:p-2.5 xl:p-3">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <div className="relative size-10 sm:size-12 xl:size-14">
@@ -70,8 +96,10 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
-      {isOpen && <MobileMenu onClose={handleClose} />}
-    </header>
+      {/* Mobile Menu with AnimatePresence for exit animation */}
+      <AnimatePresence>
+        {isOpen && <MobileMenu onClose={handleClose} />}
+      </AnimatePresence>
+    </motion.header>
   );
 }

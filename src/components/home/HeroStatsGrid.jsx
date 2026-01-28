@@ -1,6 +1,7 @@
 import Image from "next/image";
 import StatCard from "../card/StatCard";
 import HeroSocialLinks from "./HeroSocialLinks";
+import * as motion from "motion/react-client";
 
 const stats = [
   {
@@ -44,7 +45,13 @@ export default function HeroStatsGrid() {
       <div className="bg-light-soil/50 mt-6 h-px"></div>
 
       {/* stone image */}
-      <div className="absolute -bottom-[16%] left-[7%]">
+      <motion.div
+        className="absolute -bottom-[16%] left-[7%]"
+        initial={{ y: 60 }}
+        whileInView={{ y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      >
         <div className="relative size-33">
           <Image
             src="/images/icons/stone-5.svg"
@@ -53,7 +60,7 @@ export default function HeroStatsGrid() {
             className="object-cover"
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

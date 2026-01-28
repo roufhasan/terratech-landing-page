@@ -52,3 +52,9 @@
     animation: marquee-right linear infinite;
   }
 }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}

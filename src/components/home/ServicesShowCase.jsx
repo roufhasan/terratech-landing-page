@@ -1,7 +1,7 @@
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import ServiceCard from "../card/ServiceCard";
 import Link from "next/link";
+import * as motion from "motion/react-client";
+import ServiceCard from "../card/ServiceCard";
 
 const services = [
   {
@@ -33,9 +33,18 @@ const services = [
 
 export default function ServicesShowCase() {
   return (
-    <section className="bg-warm-light text-dark-soil relative px-5 py-12 md:py-16 lg:px-0 lg:py-25">
+    <section
+      id="services"
+      className="bg-warm-light text-dark-soil relative px-5 py-12 md:py-16 lg:px-0 lg:py-25"
+    >
       {/* stone images */}
-      <div className="absolute -top-[5%] right-0 hidden lg:block">
+      <motion.div
+        className="absolute -top-[5%] right-0 hidden lg:block"
+        initial={{ scale: 0.7, rotate: -15 }}
+        whileInView={{ scale: 1, rotate: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+      >
         <div className="relative size-36">
           <Image
             src="/images/icons/stone-7.svg"
@@ -44,9 +53,15 @@ export default function ServicesShowCase() {
             className="object-cover"
           />
         </div>
-      </div>
+      </motion.div>
 
-      <div className="absolute top-[5%] right-[4%] hidden lg:block">
+      <motion.div
+        className="absolute top-[5%] right-[4%] hidden lg:block"
+        initial={{ scale: 0.7, rotate: 10 }}
+        whileInView={{ scale: 1, rotate: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+      >
         <div className="relative size-30">
           <Image
             src="/images/icons/stone-8.svg"
@@ -55,9 +70,15 @@ export default function ServicesShowCase() {
             className="object-cover"
           />
         </div>
-      </div>
+      </motion.div>
 
-      <div className="absolute top-[15%] right-[2%] hidden lg:block">
+      <motion.div
+        className="absolute top-[15%] right-[2%] hidden lg:block"
+        initial={{ scale: 0.5 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+      >
         <div className="relative size-11">
           <Image
             src="/images/icons/stone-9.svg"
@@ -66,7 +87,7 @@ export default function ServicesShowCase() {
             className="object-cover"
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* services container */}
       <div className="container-narrow">
@@ -78,28 +99,45 @@ export default function ServicesShowCase() {
             <span className="block text-right">accuracy.</span>
           </h2>
 
-          <div className="absolute top-[70%] left-[5%] z-10 md:left-[20%]">
-            <div className="relative size-36 rotate-35 lg:size-57">
+          <motion.div
+            className="absolute top-[70%] left-[5%] z-10 md:left-[20%]"
+            initial={{ y: 250, scale: 0.8 }}
+            whileInView={{ y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 1.5,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <motion.div
+              className="relative size-36 lg:size-57"
+              animate={{ rotate: 360 }}
+              transition={{
+                duration: 7,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
               <Image
                 src="/images/icons/stone-6.svg"
                 alt="stone"
                 fill
                 className="object-cover"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* services card */}
         <div className="mt-20">
           {services.map((service, i) => (
-            <ServiceCard key={i} service={service} />
+            <ServiceCard key={i} service={service} index={i} />
           ))}
         </div>
 
         <div className="mt-16 flex items-center justify-center">
           <Link
-            href="/services"
+            href="#contact"
             className="text-popping bg-dark-soil inline-block rounded-full px-10 py-4 text-sm font-medium tracking-wider uppercase"
           >
             All Services

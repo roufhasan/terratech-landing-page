@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import * as motion from "motion/react-client";
 import Marquee from "../shared/Marquee";
 
 const projects = [
@@ -31,9 +32,18 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="bg-warm-light text-dark-soil relative px-5 py-16 md:py-24 lg:px-0 lg:py-37.5">
+    <section
+      id="projects"
+      className="bg-warm-light text-dark-soil relative px-5 py-16 md:py-24 lg:px-0 lg:py-37.5"
+    >
       {/* stone images */}
-      <div className="absolute -top-[5%] right-[5%] md:-top-[10%]">
+      <motion.div
+        className="absolute -top-[5%] right-[5%] md:-top-[10%]"
+        initial={{ scale: 0.7, rotate: -20 }}
+        whileInView={{ scale: 1, rotate: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="relative size-28 md:size-51">
           <Image
             src="/images/icons/stone-2.svg"
@@ -42,9 +52,15 @@ export default function Projects() {
             className="object-cover"
           />
         </div>
-      </div>
+      </motion.div>
 
-      <div className="absolute top-[15%] right-[1%] hidden lg:block">
+      <motion.div
+        className="absolute top-[15%] right-[1%] hidden lg:block"
+        initial={{ scale: 0.7, rotate: 15 }}
+        whileInView={{ scale: 1, rotate: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+      >
         <div className="relative size-30">
           <Image
             src="/images/icons/stone-8.svg"
@@ -53,7 +69,7 @@ export default function Projects() {
             className="object-cover"
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* container */}
       <div className="container-narrow flex flex-col md:flex-row md:items-end md:justify-between">
@@ -63,7 +79,7 @@ export default function Projects() {
         </h2>
 
         <Link
-          href="/"
+          href="#contact"
           className="bg-dark-soil text-popping mt-5 inline-block w-fit rounded-full px-6 py-4 text-sm font-medium tracking-wider uppercase"
         >
           Projects

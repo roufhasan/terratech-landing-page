@@ -1,11 +1,23 @@
 import Link from "next/link";
 import { X } from "lucide-react";
 import { navLinks } from "@/utils/constants";
+import * as motion from "motion/react-client";
 
 export default function MobileMenu({ onClose }) {
   return (
-    <div className="fixed top-0 left-0 z-40 h-dvh w-full bg-[#494744] px-7 pt-8 lg:hidden">
-      <div className="flex items-center justify-end">
+    <motion.div
+      className="bg-dark-soil/95 fixed top-0 left-0 z-40 h-dvh w-full px-7 pt-8 backdrop-blur-md lg:hidden"
+      initial={{ x: "100%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "100%" }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
+      <motion.div
+        className="flex items-center justify-end"
+        initial={{ x: 50 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
+      >
         <button
           onClick={onClose}
           className="text-warm-light hover:text-popping p-2 transition-colors lg:hidden"
@@ -13,24 +25,37 @@ export default function MobileMenu({ onClose }) {
         >
           <X size={24} />
         </button>
-      </div>
+      </motion.div>
 
-      <nav className="mt-6 flex flex-col">
-        {navLinks.map((nav) => (
-          <Link
+      <motion.nav
+        className="mt-6 flex flex-col"
+        initial="hidden"
+        animate="visible"
+        transition={{ staggerChildren: 0.08, delayChildren: 0.2 }}
+      >
+        {navLinks.map((nav, i) => (
+          <motion.div
             key={nav.title}
-            href={nav.url}
-            onClick={onClose}
-            className={`border-light-soil/50 border-b py-4 text-lg font-medium tracking-wider uppercase ${
-              nav?.highlight
-                ? "bg-popping text-dark-soil hover:bg-popping/90 mt-4 w-fit px-6"
-                : "hover:text-popping"
-            }`}
+            variants={{
+              hidden: { x: 50 },
+              visible: { x: 0 },
+            }}
+            transition={{ duration: 0.4 }}
           >
-            {nav.title}
-          </Link>
+            <Link
+              href={nav.url}
+              onClick={onClose}
+              className={`border-light-soil/50 block border-b py-4 text-lg font-medium tracking-wider uppercase ${
+                nav?.highlight
+                  ? "bg-popping text-dark-soil hover:bg-popping/90 mt-4 w-fit rounded-full px-6"
+                  : "hover:text-popping"
+              }`}
+            >
+              {nav.title}
+            </Link>
+          </motion.div>
         ))}
-      </nav>
-    </div>
+      </motion.nav>
+    </motion.div>
   );
 }
